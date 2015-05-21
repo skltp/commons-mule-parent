@@ -1,20 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--
-  Licensed to the soi-toolkit project under one or more
-  contributor license agreements.  See the NOTICE file distributed with
-  this work for additional information regarding copyright ownership.
-  The soi-toolkit project licenses this file to You under the Apache License, Version 2.0
-  (the "License"); you may not use this file except in compliance with
-  the License.  You may obtain a copy of the License at
- 
-      http://www.apache.org/licenses/LICENSE-2.0
- 
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the License for the specific language governing permissions and
-  limitations under the License.
--->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <parent>
@@ -30,20 +14,18 @@
     a minimum set of constraints on integration components.
   -->
   <modelVersion>4.0.0</modelVersion>
-  <groupId>org.soitoolkit.commons.poms</groupId>
-  <artifactId>soitoolkit-default-parent</artifactId>
+  <groupId>se.skltp.commons</groupId>
+  <artifactId>skltp-commons-mule-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.0.0-M5-SNAPSHOT</version>
-  <name>soitoolkit-default-parent</name>
-  <description>The default parent pom for components that use soi-toolkit, e.g. integration and schema components</description>
-  <url>http://soi-toolkit.org</url>
-  <licenses>
-    <license>
-      <name>The Apache Software License, Version 2.0</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-      <distribution>repo</distribution>
-    </license>
-  </licenses>
+  <version>1.0.0-SNAPSHOT</version>
+  <name>skltp-commons-mule-parent</name>
+
+  <scm>
+    <url>http://github.com/skltp/commons-mule-parent.git</url>
+    <connection>scm:git:git://github.com/skltp/commons-mule-parent.git</connection>
+    <developerConnection>scm:git:git://github.com/skltp/commons-mule-parent.git</developerConnection>
+    <tag>HEAD</tag>
+  </scm>
 
   <properties>
 		<!-- WARNING: Using ${project.version} will not work here, 
@@ -51,7 +33,7 @@
 			 to its own project-version and not soi-toolkits. 
 			 So we have to specify the soitoolkit-version twice! 
 		-->
-    <soitoolkit.version>2.0.0-M5-SNAPSHOT</soitoolkit.version>
+    <soitoolkit.version>0.6.1</soitoolkit.version>
     
     <compiler.target.version>1.6</compiler.target.version>
     <compiler.source.version>1.6</compiler.source.version>
