@@ -138,6 +138,41 @@
       </dependency>
       <!-- TODO: add slf4j's JCL-bridge (jcl-over-slf4j.jar) when
         JCL has been excluded from classpath - is currently in -->
+
+
+      <!--
+      Workaround for issue with missing jug-dependency after shutdown of the
+      codehaus.org maven-repository.
+      Valid for Mule 3.3.1 and soi-toolkit versions < 2.0.0-M5.
+      Refer to:
+      https://skl-tp.atlassian.net/browse/SKLTP-646
+      https://github.com/soi-toolkit/soi-toolkit-mule/issues/396
+
+      Note: for Mule 3.3.1, the jug-dependency is being referenced with compile
+      time scope as below, so we will still have the correct jug-dependency in
+      the classpath.
+
+      >mvn dependency:tree
+
+      org.soitoolkit.commons.poms.mule-dependencies:soitoolkit-mule-3.3.1-dependencies:pom:0.6.1:compile
+        org.mule:mule-core:jar:3.3.1:compile
+          org.mule.tests:mule-tests-functional:jar:3.3.1:compile
+            org.mule:mule-core:test-jar:tests:3.3.1:compile
+              org.safehaus.jug:jug:jar:asl:2.0.0:compile
+      -->
+      <dependency>
+        <groupId>org.soitoolkit.commons.poms.mule-dependencies</groupId>
+        <artifactId>soitoolkit-mule-3.3.1-dependencies</artifactId>
+        <version>${soitoolkit.version}</version>
+        <type>pom</type>
+        <exclusions>
+          <exclusion>
+            <groupId>org.safehaus.jug</groupId>
+            <artifactId>jug.osgi</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+
     </dependencies>
   </dependencyManagement>
 
