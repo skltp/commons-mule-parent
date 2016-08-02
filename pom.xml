@@ -17,14 +17,14 @@
   <groupId>se.skltp.commons</groupId>
   <artifactId>skltp-commons-mule-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.0.1-SNAPSHOT</version>
+  <version>2.0.1</version>
   <name>skltp-commons-mule-parent</name>
 
   <scm>
     <url>http://github.com/skltp/commons-mule-parent.git</url>
     <connection>scm:git:git://github.com/skltp/commons-mule-parent.git</connection>
     <developerConnection>scm:git:git://github.com/skltp/commons-mule-parent.git</developerConnection>
-    <tag>HEAD</tag>
+    <tag>v2.0.1</tag>
   </scm>
 
   <properties>
@@ -141,9 +141,7 @@
       <!--
       Workaround for issue with missing jug-dependency after shutdown of the
       codehaus.org maven-repository.
-      Valid for Mule 3.3.1 and soi-toolkit versions < 2.0.0-M5. Refer to: https://skl-tp.atlassian.net/browse/SKLTP-646 https://github.com/soi-toolkit/soi-toolkit-mule/issues/396 Note: for Mule 3.3.1, the jug-dependency is being referenced with compile time scope as below, so we will still have the correct jug-dependency in the classpath.
-
-      >mvn dependency:tree
+      Valid for Mule 3.3.1 and soi-toolkit versions < 2.0.0-M5. Refer to: https://skl-tp.atlassian.net/browse/SKLTP-646 https://github.com/soi-toolkit/soi-toolkit-mule/issues/396 Note: for Mule 3.3.1, the jug-dependency is being referenced with compile time scope as below, so we will still have the correct jug-dependency in the classpath. >mvn dependency:tree
 
       org.soitoolkit.commons.poms.mule-dependencies:soitoolkit-mule-3.3.1-dependencies:pom:0.6.1:compile
         org.mule:mule-core:jar:3.3.1:compile
