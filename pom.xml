@@ -76,6 +76,10 @@
     <maven-war-plugin.version>2.6</maven-war-plugin.version>
     <properties-maven-plugin.version>1.0.0</properties-maven-plugin.version>
     <studio-maven-plugin.version>3.4.2</studio-maven-plugin.version>
+
+	<!-- Turn off strict checking of javadoc tags for Java 8 -->
+    <additionalparam>-Xdoclint:none</additionalparam>
+
 	</properties>
 	
     <repositories>
