@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-    <parent>
-        <groupId>org.sonatype.oss</groupId>
-        <artifactId>oss-parent</artifactId>
-        <version>9</version>
-    </parent>
-
   <!--
     This is the default parent-pom for integration components based on
     soi-toolkit.
@@ -19,6 +13,19 @@
   <packaging>pom</packaging>
   <version>2.0.3-SNAPSHOT</version>
   <name>skltp-commons-mule-parent</name>
+
+  <distributionManagement>
+    <repository>
+      <id>release-nexus</id>
+      <name>Release Nexus</name>
+      <url>${releases-nexus-url}</url>
+    </repository>
+    <snapshotRepository>
+      <id>snapshot-nexus</id>
+      <name>Snapshot Nexus</name>
+      <url>${snapshot-nexus-url}</url>
+    </snapshotRepository>
+  </distributionManagement>
 
   <scm>
     <url>http://github.com/skltp/commons-mule-parent.git</url>
@@ -76,7 +83,7 @@
     <maven-war-plugin.version>2.6</maven-war-plugin.version>
     <properties-maven-plugin.version>1.0.0</properties-maven-plugin.version>
     <studio-maven-plugin.version>3.4.2</studio-maven-plugin.version>
-
+    <commons-collection.version>3.2.2</commons-collection.version>
 	<!-- Turn off strict checking of javadoc tags for Java 8 -->
     <additionalparam>-Xdoclint:none</additionalparam>
 
@@ -115,6 +122,14 @@
       <!-- ****************************************************** -->
       <!-- dependencies - please keep list alphabetically ordered -->
       <!-- ****************************************************** -->
+
+      <!-- Override commons-collections version 3.2.1 -->
+      <dependency>
+        <groupId>commons-collections</groupId>
+        <artifactId>commons-collections</artifactId>
+        <version>${commons-collection.version}</version>
+      </dependency>
+
       <!-- log4j: replaced with log4j2 from mule 3.6.0 -->
       <dependency>
         <groupId>log4j</groupId>
