@@ -380,7 +380,7 @@
 			<autoVersionSubmodules>true</autoVersionSubmodules>
 			<tagNameFormat>v@{project.version}</tagNameFormat>
             <useReleaseProfile>false</useReleaseProfile>
-			<pushChanges>false</pushChanges>
+			<pushChanges>true</pushChanges>
 			<localCheckout>true</localCheckout>
 		</configuration>
 	</plugin>
